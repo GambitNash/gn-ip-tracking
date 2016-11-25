@@ -8,7 +8,7 @@
  */
 
 // Make sure we're in wordpress (not being called directly) and the plugin is loaded.
-if ( !defined( 'ABSPATH' ) || !defined('GN_IP_TRACKING_VERSION') ) {
+if ( !defined( 'ABSPATH' ) || !defined( 'GN_IP_TRACKING_VERSION' ) ) {
     exit();
 }
 
@@ -48,7 +48,7 @@ class GN_IP_Tracking_Admin {
 
   public function register_admin_settings() {
     // Register the settings (with a validation callback)
-    register_setting( 'gn-ip-tracking', 'gn-ip-tracking'); //, array( $this, 'validate_admin_options' ) );
+    register_setting( 'gn-ip-tracking', 'gn-ip-tracking', array( $this, 'validate_admin_options' ) );
 
     // Register the settings section (main options)
     add_settings_section( 'gn-ip-tracking', esc_html__( 'IP Tracking Settngs', 'gn-ip-tracking' ), array( $this, 'admin_options_text'), 'gn-ip-tracking' );
@@ -78,7 +78,7 @@ class GN_IP_Tracking_Admin {
     $gn_phone = esc_html__( '+44 (0) 156 273 1313', 'gn-ip-tracking' );
     $gn_web = '<a href="https://gambitnash.co.uk/contact/" title="' . esc_html__( 'Contact Gambit Nash', 'gn-ip-tracking' ) . '">' . esc_html__( 'our website', 'gn-ip-tracking' ) . '</a>';
     $gn_footer = esc_html__( 'For IP Tracking Support, Please contact Gambit Nash directly on %s or online via %s', 'gn-ip-tracking' );
-    printf( '<p>' . $gn_footer . '</p>', $gn_phone, $gn_web);
+    printf( '<p>' . $gn_footer . '</p>', $gn_phone, $gn_web );
 
     echo '</div>';
   }
@@ -107,14 +107,14 @@ class GN_IP_Tracking_Admin {
    */
   public function validate_admin_options( $input ) {
     // Get the existing options (we'll only update the ones we need to)
-    $options = get_option('gn-ip-tracking');
+    $options = get_option( 'gn-ip-tracking' );
 
     // Check the given input is valid
     if( !is_array( $input ) || empty( $input ) || ( false === $input ) )
        return $options; // Invalid: Return the existing options
 
     // Validate the Checkbox for "gn_ipt_active"
-    if( isset( $input['gn_ipt_active'] ) && ( 1 == $input['gn_ipt_active'] ) ) {
+    if( isset( $input['gn_ipt_active'] ) && ( 1 === $input['gn_ipt_active'] ) ) {
       $options['gn_ipt_active'] = 1;
     } else {
       $options['gn_ipt_active'] = 0;
@@ -123,11 +123,10 @@ class GN_IP_Tracking_Admin {
     // Validate the Text field for "gn_ipt_account_id"
     //   The account ID is a string of 36 letters and numbers with hyphen seperators
     //   Example format: "012A3456-7B89-0C1D-EF23-456789GH1234"
-    $account_id = trim($input['gn_ipt_account_id']);
-    if(preg_match('/^[a-zA-Z0-9\-]{36}$/i', $account_id)) {
-      // Validation passed :-)
-      $options['gn_ipt_account_id'] = $account_id;
-    }
+    $account_id = trim( $input['gn_ipt_account_id'] );
+    if ( ! empty( $account_id ) && strlen( $account_id ) === 36 && preg_match( '/^[a-zA-Z0-9\-]{36}$/i', $account_id ) )
+      $options['gn_ipt_account_id'] = $account_id; // Validation passed :-)
+
 
     // Return the validated (safe) options array
     return $options;
@@ -137,19 +136,19 @@ class GN_IP_Tracking_Admin {
    * Outputs the main admin options section text
    */
   public function admin_options_text() {
-    printf( '<p>%s</p>', esc_html__( 'Gambit Nash IP Tracking Options', 'gn-ip-tracking' ));
+    printf( '<p>%s</p>', esc_html__( 'Gambit Nash IP Tracking Options', 'gn-ip-tracking' ) );
   }
 
   /**
    * Outputs the admin field "Active" (Checkbox)
    */
   public function admin_options_field_active() {
-    $options = get_option('gn-ip-tracking', array('gn_ipt_active' => 0));
+    $options = get_option( 'gn-ip-tracking', array( 'gn_ipt_active' => 0 ) );
 
     if ( ! array( $options ) || ! isset ( $options['gn_ipt_active'] ) )
       $options['gn_ipt_active'] = 0;
 
-    $checked = checked(1, $options['gn_ipt_active'], false);
+    $checked = checked( 1, $options['gn_ipt_active'], false );
     echo "<input id='gn_ipt_active' name='gn-ip-tracking[gn_ipt_active]' type='checkbox' value='1' $checked />";
   }
 
@@ -157,7 +156,7 @@ class GN_IP_Tracking_Admin {
    * Outputs the admin field "Account ID" (Text Input)
    */
   public function admin_options_field_account_id() {
-    $options = get_option('gn-ip-tracking', array('gn_ipt_account_id' => ''));
+    $options = get_option( 'gn-ip-tracking', array( 'gn_ipt_account_id' => '' ) );
 
     if ( ! array( $options ) || ! isset ( $options['gn_ipt_account_id'] ) )
       $options['gn_ipt_account_id'] = '';
@@ -174,10 +173,10 @@ class GN_IP_Tracking_Admin {
     $this->pre_admin_options();
 
     // Output the settings_fields (nonce, action, option_page fields)
-    settings_fields('gn-ip-tracking');
+    settings_fields( 'gn-ip-tracking' );
 
     // Output the setting_sections
-    do_settings_sections('gn-ip-tracking');
+    do_settings_sections( 'gn-ip-tracking' );
 
     // Output a submit button, support footer, close the `</form>` and the "wrap" div.
     $this->post_admin_options();

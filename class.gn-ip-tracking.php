@@ -8,7 +8,7 @@
  */
 
 // Make sure we're in wordpress (not being called directly) and the plugin is loaded.
-if ( !defined( 'ABSPATH' ) || !defined('GN_IP_TRACKING_VERSION') ) {
+if ( !defined( 'ABSPATH' ) || !defined( 'GN_IP_TRACKING_VERSION' ) ) {
     exit();
 }
 
