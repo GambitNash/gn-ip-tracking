@@ -149,8 +149,7 @@ class GN_IP_Tracking_Admin {
     if ( ! array( $options ) || ! isset ( $options['gn_ipt_active'] ) )
       $options['gn_ipt_active'] = 0;
 
-    $checked = checked(1, $options['gn_ipt_active']);
-    echo "<input id='gn_ipt_active' name='gn-ip-tracking[gn_ipt_active]' type='checkbox' value='1' $checked />";
+    echo "<input id='gn_ipt_active' name='gn-ip-tracking[gn_ipt_active]' type='checkbox' value='1' " . checked(1, $options['gn_ipt_active']) . " />";
   }
 
   /**
