@@ -23,17 +23,25 @@ if ( !defined( 'ABSPATH' ) ) {
 define( 'GN_IP_TRACKING_VERSION', '1.0' );
 define( 'GN_IP_TRACKING_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
-// Load the classes
+// Load the classes (and instantise them - the class constructors will do the rest)
 if ( ! class_exists('GN_IP_Tracking') ) {
+  // Common functions - Abstract
   require_once( GN_IP_TRACKING_PLUGIN_DIR . 'class.gn_ip_tracking.php' );
 }
 
 if ( ! class_exists('GN_IP_Tracking_Frontend') ) {
+  // Frontend - Script enqueue & footer injection
   require_once( GN_IP_TRACKING_PLUGIN_DIR . 'class.gn_ip_tracking-frontend.php' );
 }
+new GN_IP_Tracking_Frontend();
 
 // Load the admin-only classes (but only in admin)
-if ( is_admin() && ! class_exists('GN_IP_Tracking_Admin') ) {
-	require_once( GN_IP_TRACKING_PLUGIN_DIR . 'class.gn_ip_tracking-admin.php' );
-	add_action( 'init', array( 'GN_IP_Tracking_Admin', 'init' ) );
+if ( is_admin() ) {
+
+  if ( ! class_exists('GN_IP_Tracking_Admin') ) {
+     // Admin - Options page, settings validation
+	   require_once( GN_IP_TRACKING_PLUGIN_DIR . 'class.gn_ip_tracking-admin.php' );
+  }
+
+  new GN_IP_Tracking_Admin();
 }

@@ -9,6 +9,12 @@ if ( !defined( 'ABSPATH' ) || !defined('GN_IP_TRACKING_VERSION') ) {
     exit();
 }
 
+/**
+ * GN_IP_Tracking_Admin class
+ *
+ * Admin code for the IP Tracking integration - Deals with admin options pages
+ * and menus.
+ */
 class GN_IP_Tracking_Admin {
 
   /**
