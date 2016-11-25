@@ -25,7 +25,7 @@ class GN_IP_Tracking {
    * Adds default options used by the plugin if they do not already exist.
    */
   public function activate_plugin() {
-    $defaults = array('gn_ipt_account_id' => '', 'gn_ipt_active' => 0);
+    $defaults = array( 'gn_ipt_account_id' => '', 'gn_ipt_active' => 0 );
 
     if ( get_option( 'gn-ip-tracking' ) === false )
       add_option( 'gn-ip-tracking', $defaults, '', 'yes' );
@@ -99,7 +99,7 @@ class GN_IP_Tracking {
   {
     $output = PHP_EOL;
     $output .= '<script type="text/javascript">' . PHP_EOL;
-    $output .= '  var ptAccount = "' . (string)$account . '";' . PHP_EOL;
+    $output .= '  var ptAccount = "' . esc_js( (string)$account ) . '";' . PHP_EOL;
     $output .= '  try { ptInit(ptAccount); } catch (err) { }' . PHP_EOL;
     $output .= '</script>' . PHP_EOL;
 
@@ -113,7 +113,7 @@ class GN_IP_Tracking {
   {
     $output = PHP_EOL;
     $output .= '<noscript>' . PHP_EOL;
-    $output .= '  <img width="1" height="1" src="https://stats.gambitnash.co.uk/stats/stat-nojs.aspx?ac=' . (string)$account . '" alt="" />' . PHP_EOL;
+    $output .= '  <img width="1" height="1" src="https://stats.gambitnash.co.uk/stats/stat-nojs.aspx?ac=' . esc_html( (string)$account ) . '" alt="" />' . PHP_EOL;
     $output .= '</noscript>' . PHP_EOL;
 
     return (string)$output;
