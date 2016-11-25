@@ -33,7 +33,7 @@ class GN_IP_Tracking_Frontend {
       add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'));
 
       // Also hook the tracking trigger to the 'wp_footer' action - this outputs the tracking ID and trigger.
-      add_action('wp_footer', array($this->$ipt_core, 'output_ip_tracking_footer_scripts'), 30);
+      add_action('wp_footer', array('GN_IP_Tracking', 'output_ip_tracking_footer_scripts'), 30);
     }
   }
 
