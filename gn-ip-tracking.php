@@ -20,7 +20,7 @@ Text Domain: gn-ip-tracking
 
 // Make sure we're in wordpress (and not being called directly)
 if ( !defined( 'ABSPATH' ) ) {
-		exit();
+	exit();
 }
 
 // Define some constants to be used in other classes.
