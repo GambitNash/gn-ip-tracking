@@ -135,7 +135,7 @@ class GN_IP_Tracking {
 
       $output .= '<!-- End Gambit Nash IPT -->' . PHP_EOL;
 
-      echo (string)$output;
+      echo (string)apply_filters( 'gn_ip_tracking_footer_script', $output, $account );
     }
   }
 }

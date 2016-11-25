@@ -129,7 +129,7 @@ class GN_IP_Tracking_Admin {
 
 
     // Return the validated (safe) options array
-    return $options;
+    return apply_filters( 'gn_ip_tracking_validate_admin_options', $options, $input );
   }
 
   /**
