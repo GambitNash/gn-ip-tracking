@@ -28,12 +28,13 @@ if ( ! class_exists('GN_IP_Tracking') ) {
   // Common functions - Abstract
   require_once( GN_IP_TRACKING_PLUGIN_DIR . 'class.gn_ip_tracking.php' );
 }
+$ipt_core = new GN_IP_Tracking();
 
 if ( ! class_exists('GN_IP_Tracking_Frontend') ) {
   // Frontend - Script enqueue & footer injection
   require_once( GN_IP_TRACKING_PLUGIN_DIR . 'class.gn_ip_tracking-frontend.php' );
 }
-new GN_IP_Tracking_Frontend();
+new GN_IP_Tracking_Frontend($ipt_core);
 
 // Load the admin-only classes (but only in admin)
 if ( is_admin() ) {
@@ -43,5 +44,5 @@ if ( is_admin() ) {
 	   require_once( GN_IP_TRACKING_PLUGIN_DIR . 'class.gn_ip_tracking-admin.php' );
   }
 
-  new GN_IP_Tracking_Admin();
+  new GN_IP_Tracking_Admin($ipt_core);
 }

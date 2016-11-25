@@ -16,15 +16,17 @@ if ( !defined( 'ABSPATH' ) || !defined('GN_IP_TRACKING_VERSION') ) {
  * and menus.
  */
 class GN_IP_Tracking_Admin {
+  private $ipt_core = null;
 
   /**
    * GN IP Tracking Admin
    * If the class is loaded within the WP Admin, settings and menus will be
    * registered via the `admin_menu` and `admin_init` actions.
    */
-  public function __construct() {
+  public function __construct($ipt_core) {
     // If the class has been loaded in admin (normal), register the menu pages
     if ( is_admin() ){
+      $this->ipt_core = $ipt_core;
       add_action( 'admin_menu', array( $this, 'admin_add_menu_page' ) );
       add_action( 'admin_init', array( $this, 'register_admin_settings' ) );
     }
