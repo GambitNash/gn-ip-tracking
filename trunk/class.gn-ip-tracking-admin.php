@@ -51,7 +51,7 @@ class GN_IP_Tracking_Admin {
 		register_setting( 'gn-ip-tracking', 'gn-ip-tracking', array( $this, 'validate_admin_options' ) );
 
 		// Register the settings section (main options)
-		add_settings_section( 'gn-ip-tracking', esc_html__( 'IP Tracking Settngs', 'gn-ip-tracking' ), array( $this, 'admin_options_text'), 'gn-ip-tracking' );
+		add_settings_section( 'gn-ip-tracking', esc_html__( 'IP Tracking Settings', 'gn-ip-tracking' ), array( $this, 'admin_options_text'), 'gn-ip-tracking' );
 
 		// Register the settings fields
 		add_settings_field( 'gn_ipt_active', esc_html__( 'Activate IP Tracking', 'gn-ip-tracking' ),	array( $this, 'admin_options_field_active'), 'gn-ip-tracking', 'gn-ip-tracking' );
