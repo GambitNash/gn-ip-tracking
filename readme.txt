@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== IP Tracking by Gambit Nash ===
 Contributors: danw310895
 Tags: ip, tracking, b2b, leads, saas, integration
 Requires at least: 4.0
