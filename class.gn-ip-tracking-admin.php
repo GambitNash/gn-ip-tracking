@@ -123,7 +123,7 @@ class GN_IP_Tracking_Admin {
     // Validate the Text field for "gn_ipt_account_id"
     //   The account ID is a string of 36 letters and numbers with hyphen seperators
     //   Example format: "012A3456-7B89-0C1D-EF23-456789GH1234"
-    $account_id = trim( $input['gn_ipt_account_id'] );
+    $account_id = trim( strip_tags( stripslashes( $input['gn_ipt_account_id'] ) ) );
     if ( ! empty( $account_id ) && strlen( $account_id ) === 36 && preg_match( '/^[a-zA-Z0-9\-]{36}$/i', $account_id ) )
       $options['gn_ipt_account_id'] = $account_id; // Validation passed :-)
 
