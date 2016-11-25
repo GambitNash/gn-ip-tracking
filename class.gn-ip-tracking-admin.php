@@ -75,9 +75,8 @@ class GN_IP_Tracking_Admin {
   public function post_admin_page() {
     echo '<hr />';
 
-    $gn_phone = esc_html__( '+44 (0) 156 273 1313', 'gn-ip-tracking' );
     $gn_web = '<a href="https://gambitnash.co.uk/contact/" title="' . esc_html__( 'Contact Gambit Nash', 'gn-ip-tracking' ) . '">' . esc_html__( 'our website', 'gn-ip-tracking' ) . '</a>';
-    $gn_footer = esc_html__( 'For IP Tracking Support, Please contact Gambit Nash directly on %s or online via %s', 'gn-ip-tracking' );
+    $gn_footer = esc_html__( 'For IP Tracking Support, Please contact Gambit Nash via %s', 'gn-ip-tracking' );
     printf( '<p>' . $gn_footer . '</p>', $gn_phone, $gn_web );
 
     echo '</div>';
