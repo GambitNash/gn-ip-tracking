@@ -146,7 +146,7 @@ class GN_IP_Tracking_Admin {
   public function admin_options_field_active() {
     $options = get_option('gn-ip-tracking', array('gn_ipt_active' => 0));
 
-    if ( ! array( $options ) || ! is_set ( $options['gn_ipt_active'] ) )
+    if ( ! array( $options ) || ! isset ( $options['gn_ipt_active'] ) )
       $options['gn_ipt_active'] = 0;
 
     $checked = checked(1, $options['gn_ipt_active']);
@@ -159,7 +159,7 @@ class GN_IP_Tracking_Admin {
   public function admin_options_field_account_id() {
     $options = get_option('gn-ip-tracking', array('gn_ipt_account_id' => ''));
 
-    if ( ! array( $options ) || ! is_set ( $options['gn_ipt_account_id'] ) )
+    if ( ! array( $options ) || ! isset ( $options['gn_ipt_account_id'] ) )
       $options['gn_ipt_account_id'] = '';
 
     echo "<input id='gn_ipt_account_id' name='gn-ip-tracking[gn_ipt_account_id]' size='36' type='text' value='{$options['gn_ipt_account_id']}' />";
