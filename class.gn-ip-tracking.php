@@ -2,9 +2,12 @@
 /**
  * @package GN_IP_Tracking
  * @version 1.0
+ * @copyright Copyright (C) 2016 Gambit Nash Limited.
+ * @license GNU GPL v3 or later
+ * @author Daniel Wilson
  */
 
-// Make sure we're in wordpress (and not being called directly)
+// Make sure we're in wordpress (not being called directly) and the plugin is loaded.
 if ( !defined( 'ABSPATH' ) || !defined('GN_IP_TRACKING_VERSION') ) {
     exit();
 }
@@ -12,7 +15,7 @@ if ( !defined( 'ABSPATH' ) || !defined('GN_IP_TRACKING_VERSION') ) {
 /**
  * GN_IP_Tracking class
  *
- * Contains common functions used amongst other IP Tracking classes
+ * Contains common functions used amongst other Gmabit Nash IP Tracking classes
  *
  * @abstract
  */

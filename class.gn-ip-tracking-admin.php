@@ -2,9 +2,12 @@
 /**
  * @package GN_IP_Tracking
  * @version 1.0
+ * @copyright Copyright (C) 2016 Gambit Nash Limited.
+ * @license GNU GPL v3 or later
+ * @author Daniel Wilson
  */
 
-// Make sure we're in wordpress (and not being called directly)
+// Make sure we're in wordpress (not being called directly) and the plugin is loaded.
 if ( !defined( 'ABSPATH' ) || !defined('GN_IP_TRACKING_VERSION') ) {
     exit();
 }
@@ -45,14 +48,14 @@ class GN_IP_Tracking_Admin {
 
   public function register_admin_settings() {
     // Register the settings (with a validation callback)
-    register_setting( 'gn-ip-tracking-options', 'gn-ip-tracking-options', array( $this, 'validate_admin_options' ) );
+    register_setting( 'gn-ip-tracking', 'gn-ip-tracking'); //, array( $this, 'validate_admin_options' ) );
 
     // Register the settings section (main options)
-    add_settings_section( 'gn-ip-tracking-options-main', esc_html__( 'IP Tracking Settngs', 'gn-ip-tracking' ), array( $this, 'admin_options_text'), 'gn-ip-tracking' );
+    add_settings_section( 'gn-ip-tracking', esc_html__( 'IP Tracking Settngs', 'gn-ip-tracking' ), array( $this, 'admin_options_text'), 'gn-ip-tracking' );
 
     // Register the settings fields
-    add_settings_field( 'gn_ipt_active', esc_html__( 'Activate IP Tracking', 'gn-ip-tracking' ),  array( $this, 'admin_options_field_active'), 'gn-ip-tracking', 'gn-ip-tracking-options-main' );
-    add_settings_field( 'gn_ipt_account_id', esc_html__( 'Account ID', 'gn-ip-tracking' ),  array( $this, 'admin_options_field_account_id'), 'gn-ip-tracking', 'gn-ip-tracking-options-main' );
+    add_settings_field( 'gn_ipt_active', esc_html__( 'Activate IP Tracking', 'gn-ip-tracking' ),  array( $this, 'admin_options_field_active'), 'gn-ip-tracking', 'gn-ip-tracking' );
+    add_settings_field( 'gn_ipt_account_id', esc_html__( 'Account ID', 'gn-ip-tracking' ),  array( $this, 'admin_options_field_account_id'), 'gn-ip-tracking', 'gn-ip-tracking' );
   }
 
   /**
@@ -127,7 +130,7 @@ class GN_IP_Tracking_Admin {
     }
 
     // Return the validated (safe) options array
-    return $newinput;
+    return $options;
   }
 
   /**
@@ -141,7 +144,7 @@ class GN_IP_Tracking_Admin {
    * Outputs the admin field "Active" (Checkbox)
    */
   public function admin_options_field_active() {
-    $options = get_option('gn-ip-tracking-options');
+    $options = get_option('gn-ip-tracking');
     $checked = checked(1, $options['gn_ipt_active']);
     echo "<input id='gn_ipt_active' name='plugin_options[gn_ipt_active]' type='checkbox' value='1' $checked />";
   }
@@ -150,7 +153,7 @@ class GN_IP_Tracking_Admin {
    * Outputs the admin field "Account ID" (Text Input)
    */
   public function admin_options_field_account_id() {
-    $options = get_option('gn-ip-tracking-options');
+    $options = get_option('gn-ip-tracking');
     echo "<input id='gn_ipt_account_id' name='plugin_options[gn_ipt_account_id]' size='36' type='text' value='{$options['gn_ipt_account_id']}' />";
   }
 
@@ -163,10 +166,10 @@ class GN_IP_Tracking_Admin {
     $this->pre_admin_options();
 
     // Output the settings_fields (nonce, action, option_page fields)
-    settings_fields('gn-ip-tracking-options');
+    settings_fields('gn-ip-tracking');
 
     // Output the setting_sections
-    do_settings_sections('gn-ip-tracking-options-main');
+    do_settings_sections('gn-ip-tracking');
 
     // Output a submit button, support footer, close the `</form>` and the "wrap" div.
     $this->post_admin_options();
