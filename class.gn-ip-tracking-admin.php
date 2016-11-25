@@ -144,7 +144,7 @@ class GN_IP_Tracking_Admin {
    * Outputs the admin field "Active" (Checkbox)
    */
   public function admin_options_field_active() {
-    $options = get_option('gn-ip-tracking');
+    $options = get_option('gn-ip-tracking', array('gn_ipt_active' => 0));
     $checked = checked(1, $options['gn_ipt_active']);
     echo "<input id='gn_ipt_active' name='plugin_options[gn_ipt_active]' type='checkbox' value='1' $checked />";
   }
@@ -153,7 +153,7 @@ class GN_IP_Tracking_Admin {
    * Outputs the admin field "Account ID" (Text Input)
    */
   public function admin_options_field_account_id() {
-    $options = get_option('gn-ip-tracking');
+    $options = get_option('gn-ip-tracking', array('gn_ipt_account_id' => ''));
     echo "<input id='gn_ipt_account_id' name='plugin_options[gn_ipt_account_id]' size='36' type='text' value='{$options['gn_ipt_account_id']}' />";
   }
 
