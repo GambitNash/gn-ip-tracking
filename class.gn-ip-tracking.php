@@ -16,10 +16,20 @@ if ( !defined( 'ABSPATH' ) || !defined('GN_IP_TRACKING_VERSION') ) {
  * GN_IP_Tracking class
  *
  * Contains common functions used amongst other Gmabit Nash IP Tracking classes
- *
- * @abstract
  */
 class GN_IP_Tracking {
+
+  /**
+   * Activation hook
+   *
+   * Adds default options used by the plugin if they do not already exist.
+   */
+  public function activate_plugin() {
+    $defaults = array('gn_ipt_account_id' => '', 'gn_ipt_active' => 0);
+
+    if ( get_option( 'gn-ip-tracking' ) === false )
+      add_option( 'gn-ip-tracking', $defaults, '', 'yes' );
+  }
 
   /**
    * Checks that both get_ip_tracking_state() is true and get_ip_tracking_account() is not null or empty
@@ -47,7 +57,7 @@ class GN_IP_Tracking {
    */
   public function get_ip_tracking_state($opts = null) {
     if ( ! $opts ) {
-      $opts = get_option( 'gn-ip-tracking-options' );
+      $opts = get_option( 'gn-ip-tracking' );
     }
 
     return (bool)$opts['gn_ipt_active'];
@@ -57,9 +67,9 @@ class GN_IP_Tracking {
    * Sets the current state of the GN IP Tracking plugin (Enabled/Disabled)
    */
   public function set_ip_tracking_state($active) {
-    $opts = get_option( 'gn-ip-tracking-options' );
+    $opts = get_option( 'gn-ip-tracking' );
     $opts['gn_ipt_active'] = (bool)$active;
-    return update_option( 'gn-ip-tracking-options', (array)$opts );
+    return update_option( 'gn-ip-tracking', (array)$opts );
   }
 
   /**
@@ -67,7 +77,7 @@ class GN_IP_Tracking {
    */
   public function get_ip_tracking_account($opts = null) {
     if ( ! $opts ) {
-      $opts = get_option( 'gn-ip-tracking-options' );
+      $opts = get_option( 'gn-ip-tracking' );
     }
 
     return (string)$opts['gn_ipt_account_id'];
@@ -77,9 +87,9 @@ class GN_IP_Tracking {
    * Sets the current account ID of the GN IP Tracking plugin
    */
   public function set_ip_tracking_account($account) {
-    $opts = get_option( 'gn-ip-tracking-options' );
+    $opts = get_option( 'gn-ip-tracking' );
     $opts['gn_ipt_account_id'] = (bool)$active;
-    return update_option( 'gn-ip-tracking-options', (array)$opts );
+    return update_option( 'gn-ip-tracking', (array)$opts );
   }
 
   /**

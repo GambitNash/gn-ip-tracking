@@ -23,30 +23,30 @@ if ( !defined( 'ABSPATH' ) ) {
     exit();
 }
 
-// Define some constants to be used in other classes
+// Define some constants to be used in other classes.
 define( 'GN_IP_TRACKING_VERSION', '1.0' );
 define( 'GN_IP_TRACKING_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
-// Load the classes (and instantise them - the class constructors will do the rest)
-if ( ! class_exists('GN_IP_Tracking') ) {
-  // GN_IP_Tracking - Common functions used by other IP Tracking classes
-  require_once( GN_IP_TRACKING_PLUGIN_DIR . 'class.gn-ip-tracking.php' );
-}
-$ipt_core = new GN_IP_Tracking();
 
-if ( ! class_exists('GN_IP_Tracking_Frontend') ) {
-  // GN_IP_Tracking_Frontend - Script enqueue & footer trigger for front-end requests
+// Load the core class GN_IP_Tracking and register the activation hook.
+if ( ! class_exists('GN_IP_Tracking') )
+  require_once( GN_IP_TRACKING_PLUGIN_DIR . 'class.gn-ip-tracking.php' );
+
+$ipt_core = new GN_IP_Tracking();
+register_activation_hook( __FILE__ , array( $ipt_core, 'activate_plugin' ) );
+
+
+// Load the front-end class - GN_IP_Tracking_Frontend.
+if ( ! class_exists('GN_IP_Tracking_Frontend') )
   require_once( GN_IP_TRACKING_PLUGIN_DIR . 'class.gn-ip-tracking-frontend.php' );
-}
+
 new GN_IP_Tracking_Frontend($ipt_core);
 
-// Load the admin-only classes (but only in admin)
-if ( is_admin() ) {
 
-  if ( ! class_exists('GN_IP_Tracking_Admin') ) {
-     // GN_IP_Tracking_Admin - Admin Options page, settings validation functions.
+// Load the admin-only class - GN_IP_Tracking_Admin - but only if is_admin.
+if ( is_admin() ) {
+  if ( ! class_exists('GN_IP_Tracking_Admin') )
 	   require_once( GN_IP_TRACKING_PLUGIN_DIR . 'class.gn-ip-tracking-admin.php' );
-  }
 
   new GN_IP_Tracking_Admin($ipt_core);
 }

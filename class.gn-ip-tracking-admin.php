@@ -107,7 +107,7 @@ class GN_IP_Tracking_Admin {
    */
   public function validate_admin_options( $input ) {
     // Get the existing options (we'll only update the ones we need to)
-    $options = get_option('gn-ip-tracking-options');
+    $options = get_option('gn-ip-tracking');
 
     // Check the given input is valid
     if( !is_array( $input ) || empty( $input ) || ( false === $input ) )
