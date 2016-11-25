@@ -110,11 +110,11 @@ class GN_IP_Tracking_Admin {
     $options = get_option( 'gn-ip-tracking' );
 
     // Check the given input is valid
-    if( !is_array( $input ) || empty( $input ) || ( false === $input ) )
+    if( !is_array( $input ) || empty( $input ) )
        return $options; // Invalid: Return the existing options
 
     // Validate the Checkbox for "gn_ipt_active"
-    if( isset( $input['gn_ipt_active'] ) && ( 1 === $input['gn_ipt_active'] ) ) {
+    if( isset( $input['gn_ipt_active'] ) && ( '1' == $input['gn_ipt_active'] ) ) {
       $options['gn_ipt_active'] = 1;
     } else {
       $options['gn_ipt_active'] = 0;
