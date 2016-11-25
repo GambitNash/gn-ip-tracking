@@ -26,13 +26,13 @@ define( 'GN_IP_TRACKING_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 // Load the classes (and instantise them - the class constructors will do the rest)
 if ( ! class_exists('GN_IP_Tracking') ) {
   // Common functions - Abstract
-  require_once( GN_IP_TRACKING_PLUGIN_DIR . 'class.gn_ip_tracking.php' );
+  require_once( GN_IP_TRACKING_PLUGIN_DIR . 'class.gn-ip-tracking.php' );
 }
 $ipt_core = new GN_IP_Tracking();
 
 if ( ! class_exists('GN_IP_Tracking_Frontend') ) {
   // Frontend - Script enqueue & footer injection
-  require_once( GN_IP_TRACKING_PLUGIN_DIR . 'class.gn_ip_tracking-frontend.php' );
+  require_once( GN_IP_TRACKING_PLUGIN_DIR . 'class.gn-ip-tracking-frontend.php' );
 }
 new GN_IP_Tracking_Frontend($ipt_core);
 
@@ -41,7 +41,7 @@ if ( is_admin() ) {
 
   if ( ! class_exists('GN_IP_Tracking_Admin') ) {
      // Admin - Options page, settings validation
-	   require_once( GN_IP_TRACKING_PLUGIN_DIR . 'class.gn_ip_tracking-admin.php' );
+	   require_once( GN_IP_TRACKING_PLUGIN_DIR . 'class.gn-ip-tracking-admin.php' );
   }
 
   new GN_IP_Tracking_Admin($ipt_core);
