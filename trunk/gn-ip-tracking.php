@@ -34,7 +34,7 @@ if ( ! class_exists('GN_IP_Tracking') )
 
 $ipt_core = new GN_IP_Tracking();
 register_activation_hook( __FILE__ , array( $ipt_core, 'activate_plugin' ) );
-add_action( 'plugins_loaded', array( $ipt_file, 'load_plugin_textdomain' ) );
+add_action( 'plugins_loaded', array( $ipt_core, 'load_plugin_textdomain' ) );
 
 
 // Load the front-end class - GN_IP_Tracking_Frontend.
