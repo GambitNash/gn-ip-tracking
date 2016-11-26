@@ -1,9 +1,9 @@
 === IP Tracking by Gambit Nash ===
 Contributors: danw310895
-Tags: ip, tracking, b2b, leads, saas, integration
+Tags: ip, tracking, b2b, leads, saas, integration, ip tracking, lead tracking, analytics, gambit nash
 Requires at least: 4.0
-Tested up to: 4.6.1
-Stable tag: 1.0
+Tested up to: 4.7
+Stable tag: 1.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,7 +18,7 @@ The IP Tracking plugin from Gambit Nash is an easy way to integrate your existin
 
 == Installation ==
 
-To install the Gamibt Nash IP Tracking plugin:
+To install the Gambit Nash IP Tracking plugin:
 
 1. Upload the plugin files to the `/wp-content/plugins/gn-ip-tracking` directory, or install the plugin through the WordPress plugins screen directly.
 1. Activate the plugin through the 'Plugins' screen in WordPress
@@ -61,12 +61,20 @@ The advantage to the IP Tracking service is that our databases are updated frequ
 
 == Changelog ==
 
+= 1.1 =
+* Fix a typo on the admin page
+* Readme Improvements
+* Include a POT file for future I18n support.
+
 = 1.0 =
 * Initial Release
 * The plugin can add the tracking code to all front-end pages and posts automatically once configured.
 
 
 == Upgrade Notice ==
+
+= 1.1 =
+This minor release corrects a typo that was present on the admin options page and introduces I18n support.
 
 = 1.0 =
 * First Stable Release, If you have a pre-1.0 version please update now.
