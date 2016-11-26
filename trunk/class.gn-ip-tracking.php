@@ -1,7 +1,7 @@
 <?php
 /**
  * @package GN_IP_Tracking
- * @version 1.0
+ * @version 1.2
  * @copyright Copyright (C) 2016 Gambit Nash Limited.
  * @license GNU GPL v3 or later
  * @author Daniel Wilson
@@ -29,6 +29,21 @@ class GN_IP_Tracking {
 
 		if ( get_option( 'gn-ip-tracking' ) === false )
 			add_option( 'gn-ip-tracking', $defaults, '', 'yes' );
+	}
+
+	/**
+	 * Load Plugin Textdomain
+	 *
+	 * Adds I18n Support - Languages stored in ./i18n/languages/ directory.
+	 * Text Domain: gn-ip-tracking
+	 *
+   * Contribute Translations Here:
+	 * https://translate.wordpress.org/projects/wp-plugins/gn-ip-tracking
+	 *
+	 * Hooked to 'plugins_loaded'
+	 */
+	public function load_plugin_textdomain() {
+	    load_plugin_textdomain( 'gn-ip-tracking', FALSE, basename( dirname( __FILE__ ) ) . '/i18n/languages/' );
 	}
 
 	/**
