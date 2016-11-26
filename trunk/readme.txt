@@ -3,7 +3,7 @@ Contributors: danw310895
 Tags: ip, tracking, b2b, leads, saas, integration, ip tracking, lead tracking, analytics, gambit nash
 Requires at least: 4.0
 Tested up to: 4.7
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -61,9 +61,12 @@ The advantage to the IP Tracking service is that our databases are updated frequ
 
 == Changelog ==
 
+= 1.2 =
+* I18n support
+
 = 1.1 =
-* Fix a typo on the admin page
-* Readme Improvements
+* Fix a typo on the admin page.
+* Readme Improvements.
 * Include a POT file for future I18n support.
 
 = 1.0 =
@@ -72,6 +75,9 @@ The advantage to the IP Tracking service is that our databases are updated frequ
 
 
 == Upgrade Notice ==
+
+= 1.2 =
+Support for translations.
 
 = 1.1 =
 This minor release corrects a typo that was present on the admin options page and introduces I18n support.
