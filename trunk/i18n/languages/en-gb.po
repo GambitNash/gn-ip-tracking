@@ -1,0 +1,68 @@
+# Translation of Plugins - IP Tracking by Gambit Nash - Stable (latest release) in English (UK)
+# This file is distributed under the same license as the Plugins - IP Tracking by Gambit Nash - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: +0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.3.0-alpha\n"
+"Language: en_GB\n"
+"Project-Id-Version: Plugins - IP Tracking by Gambit Nash - Stable (latest release)\n"
+
+#. Author URI of the plugin/theme
+msgid "https://gambitnash.co.uk"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Daniel Wilson"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "The IP Tracking plugin from Gambit Nash is an easy way to integrate your existing IP Tracking subscription into your WordPress website. Once configured, the plugin will track B2B leads via your Gambit Nash IP Tracking account."
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/gn-ip-tracking"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "IP Tracking by Gambit Nash"
+msgstr ""
+
+#: class.gn-ip-tracking-admin.php:138
+msgid "Gambit Nash IP Tracking Options"
+msgstr ""
+
+#: class.gn-ip-tracking-admin.php:79
+msgid "For IP Tracking Support, Please contact Gambit Nash via %s."
+msgstr ""
+
+#: class.gn-ip-tracking-admin.php:78
+msgid "our website"
+msgstr ""
+
+#: class.gn-ip-tracking-admin.php:78
+msgid "Contact Gambit Nash"
+msgstr ""
+
+#: class.gn-ip-tracking-admin.php:58
+msgid "Account ID"
+msgstr ""
+
+#: class.gn-ip-tracking-admin.php:57
+msgid "Activate IP Tracking"
+msgstr ""
+
+#: class.gn-ip-tracking-admin.php:54
+msgid "IP Tracking Settings"
+msgstr ""
+
+#: class.gn-ip-tracking-admin.php:42
+msgid "GN IP Tracking"
+msgstr ""
+
+#: class.gn-ip-tracking-admin.php:41 class.gn-ip-tracking-admin.php:68
+msgid "Gambit Nash IP Tracking"
+msgstr ""
