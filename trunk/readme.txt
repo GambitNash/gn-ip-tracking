@@ -3,7 +3,7 @@ Contributors: danw310895
 Tags: ip, tracking, b2b, leads, saas, integration, ip tracking, lead tracking, analytics, gambit nash
 Requires at least: 4.0
 Tested up to: 4.7
-Stable tag: 1.3
+Stable tag: 1.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
