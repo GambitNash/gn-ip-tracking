@@ -3,7 +3,7 @@ Contributors: danw310895
 Tags: ip, tracking, b2b, leads, saas, integration, ip tracking, lead tracking, analytics, gambit nash
 Requires at least: 4.0
 Tested up to: 4.7
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -61,6 +61,9 @@ The advantage to the IP Tracking service is that our databases are updated frequ
 
 == Changelog ==
 
+= 1.3 =
+* Plugin Logo / Icon added
+
 = 1.2 =
 * I18n support
 
@@ -75,6 +78,9 @@ The advantage to the IP Tracking service is that our databases are updated frequ
 
 
 == Upgrade Notice ==
+
+= 1.3 =
+We've made it pretty! The plugin now has an icon when displayed in the WordPress.org plugin directory.
 
 = 1.2 =
 Support for translations.
