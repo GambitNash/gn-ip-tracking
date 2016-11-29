@@ -1,7 +1,7 @@
 <?php
 /**
  * @package GN_IP_Tracking
- * @version 1.2
+ * @version 1.3
  * @copyright Copyright (C) 2016 Gambit Nash Limited.
  * @license GNU GPL v3 or later
  * @author Daniel Wilson
