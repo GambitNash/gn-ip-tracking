@@ -32,7 +32,28 @@ class GN_IP_Tracking_Admin {
 			$this->ipt_core = $ipt_core;
 			add_action( 'admin_menu', array( $this, 'admin_add_menu_page' ) );
 			add_action( 'admin_init', array( $this, 'register_admin_settings' ) );
+			add_filter( 'dashboard_glance_items', array( $this, 'add_dashboard_glance_items' ), 10, 1 );
 		}
+	}
+
+	public function add_dashboard_glance_items( $items ) {
+		// Default to Inactive message
+		$text = esc_html__( 'IP Tracking is Inactive', 'gn-ip-tracking' );
+
+		if ( $this->ipt_core->is_configured() !== false ) {
+			// Plugin is configured, show active message
+			$text = esc_html__( 'IP Tracking is Active', 'gn-ip-tracking' );;
+		}
+
+		if ( current_user_can( 'manage_options' ) ) {
+			// Admin! Show Active/Inactive message with link to settings
+      $items[] = sprintf( '<a class="gn-ip-tracking-overview" href="options-general.php?page=gn-ip-tracking">%1$s</a>', $text ) . "\n";
+    } else {
+			// Not admin, just show a Active/Inactive message without the link
+      $items[] = sprintf( '<span class="gn-ip-tracking-overview">%1$s</span>', $text ) . "\n";
+    }
+
+		return $items;
 	}
 
 	public function admin_add_menu_page() {
