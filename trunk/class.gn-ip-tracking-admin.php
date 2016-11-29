@@ -1,7 +1,7 @@
 <?php
 /**
  * @package GN_IP_Tracking
- * @version 1.0
+ * @version 1.4
  * @copyright Copyright (C) 2016 Gambit Nash Limited.
  * @license GNU GPL v3 or later
  * @author Daniel Wilson
@@ -32,26 +32,35 @@ class GN_IP_Tracking_Admin {
 			$this->ipt_core = $ipt_core;
 			add_action( 'admin_menu', array( $this, 'admin_add_menu_page' ) );
 			add_action( 'admin_init', array( $this, 'register_admin_settings' ) );
+			add_action( 'admin_enqueue_scripts', array( $this, 'load_admin_style') );
 			add_filter( 'dashboard_glance_items', array( $this, 'add_dashboard_glance_items' ), 10, 1 );
 			add_filter( 'plugin_action_links_' . GN_IP_TRACKING_BASENAME, array( $this, 'add_action_link' ), 10, 2 );
 		}
 	}
 
+	public function load_admin_style() {
+		wp_register_style( 'gn-ip-tracking-admin', plugins_url( 'css/gn-ipt-admin.css', __FILE__ ) , false, '1.0.0' );
+		wp_enqueue_style( 'gn-ip-tracking-admin' );
+	}
+
+
 	public function add_dashboard_glance_items( $items ) {
 		// Default to Inactive message
 		$text = esc_html__( 'IP Tracking is Inactive', 'gn-ip-tracking' );
+		$class = 'ipt-inactive';
 
 		if ( $this->ipt_core->is_configured() !== false ) {
 			// Plugin is configured, show active message
-			$text = esc_html__( 'IP Tracking is Active', 'gn-ip-tracking' );;
+			$text = esc_html__( 'IP Tracking is Active', 'gn-ip-tracking' );
+			$class = 'ipt-active';
 		}
 
 		if ( current_user_can( 'manage_options' ) ) {
 			// Admin! Show Active/Inactive message with link to settings
-      $items[] = sprintf( '<a class="gn-ip-tracking-overview" href="' . esc_url( admin_url( 'options-general.php?page=gn-ip-tracking' ) ) . '">%1$s</a>', $text ) . "\n";
+      $items[] = sprintf( '<a class="gn-ip-tracking-overview %1$s" href="' . esc_url( admin_url( 'options-general.php?page=gn-ip-tracking' ) ) . '">%2$s</a>', $class, $text ) . "\n";
     } else {
 			// Not admin, just show a Active/Inactive message without the link
-      $items[] = sprintf( '<span class="gn-ip-tracking-overview">%1$s</span>', $text ) . "\n";
+      $items[] = sprintf( '<span class="gn-ip-tracking-overview %1$s">%2$s</span>', $class, $text ) . "\n";
     }
 
 		return $items;
