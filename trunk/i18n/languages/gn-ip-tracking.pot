@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the IP Tracking by Gambit Nash package.
 msgid ""
 msgstr ""
-"Project-Id-Version: IP Tracking by Gambit Nash 1.1\n"
+"Project-Id-Version: IP Tracking by Gambit Nash 1.4\n"
 "Report-Msgid-Bugs-To: https://github.com/GambitNash/gn-ip-tracking/issues\n"
-"POT-Creation-Date: 2016-11-25 17:38:17+00:00\n"
+"POT-Creation-Date: 2016-11-29 18:30:36+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,39 +12,55 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: class.gn-ip-tracking-admin.php:41 class.gn-ip-tracking-admin.php:68
-msgid "Gambit Nash IP Tracking"
-msgstr ""
-
-#: class.gn-ip-tracking-admin.php:42
-msgid "GN IP Tracking"
+#: class.gn-ip-tracking-admin.php:49
+msgid "IP Tracking is Inactive"
 msgstr ""
 
 #: class.gn-ip-tracking-admin.php:54
+msgid "IP Tracking is Active"
+msgstr ""
+
+#: class.gn-ip-tracking-admin.php:80
+msgid "Settings"
+msgstr ""
+
+#: class.gn-ip-tracking-admin.php:85
+msgid "About IP Tracking"
+msgstr ""
+
+#: class.gn-ip-tracking-admin.php:94 class.gn-ip-tracking-admin.php:121
+msgid "Gambit Nash IP Tracking"
+msgstr ""
+
+#: class.gn-ip-tracking-admin.php:95
+msgid "GN IP Tracking"
+msgstr ""
+
+#: class.gn-ip-tracking-admin.php:107
 msgid "IP Tracking Settings"
 msgstr ""
 
-#: class.gn-ip-tracking-admin.php:57
+#: class.gn-ip-tracking-admin.php:110
 msgid "Activate IP Tracking"
 msgstr ""
 
-#: class.gn-ip-tracking-admin.php:58
+#: class.gn-ip-tracking-admin.php:111
 msgid "Account ID"
 msgstr ""
 
-#: class.gn-ip-tracking-admin.php:78
+#: class.gn-ip-tracking-admin.php:131
 msgid "Contact Gambit Nash"
 msgstr ""
 
-#: class.gn-ip-tracking-admin.php:78
+#: class.gn-ip-tracking-admin.php:131
 msgid "our website"
 msgstr ""
 
-#: class.gn-ip-tracking-admin.php:79
+#: class.gn-ip-tracking-admin.php:132
 msgid "For IP Tracking Support, Please contact Gambit Nash via %s."
 msgstr ""
 
-#: class.gn-ip-tracking-admin.php:138
+#: class.gn-ip-tracking-admin.php:191
 msgid "Gambit Nash IP Tracking Options"
 msgstr ""
 

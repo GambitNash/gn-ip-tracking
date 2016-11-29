@@ -3,7 +3,7 @@ Contributors: danw310895
 Tags: ip, tracking, b2b, leads, saas, integration, ip tracking, lead tracking, analytics, gambit nash
 Requires at least: 4.0
 Tested up to: 4.7
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -11,7 +11,7 @@ The IP Tracking plugin from Gambit Nash is an easy way to integrate your existin
 
 == Description ==
 
-The IP Tracking plugin from Gambit Nash is an easy way to integrate your existing Gambit Nash IP Tracking subscription into your WordPress website.
+The IP Tracking plugin from Gambit Nash is an easy way to integrate your existing Gambit Nash [IP Tracking](https://gambitnash.co.uk/what-we-do/b2b-ip-tracking/ "Gambit Nash IP Tracking Service") subscription into your WordPress website.
 
 **Please Note:** This plugin is only an integration for the IP Tracking service, you will need an existing subscription in order for the plugin to function.
 
@@ -22,9 +22,11 @@ To install the Gambit Nash IP Tracking plugin:
 
 1. Upload the plugin files to the `/wp-content/plugins/gn-ip-tracking` directory, or install the plugin through the WordPress plugins screen directly.
 1. Activate the plugin through the 'Plugins' screen in WordPress
-1. Use the `Settings->IP Tracking` screen to configure the plugin with your IP Tracking account ID.
+1. Use the `Settings -> IP Tracking` screen to configure the plugin with your IP Tracking account ID.
 
 After installing and configuring the plugin, be sure to purge/flush any page cache(s) you may have (for example, W3 Total Cache) to ensure the IP tracking code is added to all pages.
+
+The status of the IP Tracking plugin is visible within the "At A Glance" section of your WordPress admin dashboard.
 
 
 == Frequently Asked Questions ==
@@ -57,9 +59,15 @@ The advantage to the IP Tracking service is that our databases are updated frequ
 == Screenshots ==
 
 1. Plugin Configuration Screen
+2. Dashboard Status ("At A Glance" - IP Tracking Active)
 
 
 == Changelog ==
+
+= 1.4 =
+* "At a Glance" summary now has active and inactive icons
+* Prevent directory listings on poorly-configured servers
+* Add plugin SVG icon for display in the wordpress.org directory
 
 = 1.3 =
 * Dashboard summary added to "At A Glance" Widget
@@ -79,6 +87,9 @@ The advantage to the IP Tracking service is that our databases are updated frequ
 
 
 == Upgrade Notice ==
+
+= 1.4 =
+You can now see the status of IP Tracking from the "At a Glance" widget on your dashboard!
 
 = 1.3 =
 It's now even easier to set up Gambit Nash IP Tracking - We've added a link from the plugins page!

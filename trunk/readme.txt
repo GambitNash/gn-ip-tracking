@@ -3,7 +3,7 @@ Contributors: danw310895
 Tags: ip, tracking, b2b, leads, saas, integration, ip tracking, lead tracking, analytics, gambit nash
 Requires at least: 4.0
 Tested up to: 4.7
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -11,7 +11,7 @@ The IP Tracking plugin from Gambit Nash is an easy way to integrate your existin
 
 == Description ==
 
-The IP Tracking plugin from Gambit Nash is an easy way to integrate your existing Gambit Nash IP Tracking subscription into your WordPress website.
+The IP Tracking plugin from Gambit Nash is an easy way to integrate your existing Gambit Nash [IP Tracking](https://gambitnash.co.uk/what-we-do/b2b-ip-tracking/ "Gambit Nash IP Tracking Service") subscription into your WordPress website.
 
 **Please Note:** This plugin is only an integration for the IP Tracking service, you will need an existing subscription in order for the plugin to function.
 
@@ -61,6 +61,11 @@ The advantage to the IP Tracking service is that our databases are updated frequ
 
 == Changelog ==
 
+= 1.4 =
+* "At a Glance" summary now has active and inactive icons
+* Prevent directory listings on poorly-configured servers
+* Add plugin SVG icon for display in the wordpress.org directory
+
 = 1.3 =
 * Dashboard summary added to "At A Glance" Widget
 * "Settings" link added on Plugins page
@@ -79,6 +84,9 @@ The advantage to the IP Tracking service is that our databases are updated frequ
 
 
 == Upgrade Notice ==
+
+= 1.4 =
+You can now see the status of IP Tracking from the "At a Glance" widget on your dashboard!
 
 = 1.3 =
 It's now even easier to set up Gambit Nash IP Tracking - We've added a link from the plugins page!
