@@ -33,6 +33,7 @@ class GN_IP_Tracking_Admin {
 			add_action( 'admin_menu', array( $this, 'admin_add_menu_page' ) );
 			add_action( 'admin_init', array( $this, 'register_admin_settings' ) );
 			add_filter( 'dashboard_glance_items', array( $this, 'add_dashboard_glance_items' ), 10, 1 );
+			add_filter( 'plugin_action_links_' . GN_IP_TRACKING_BASENAME, array( $this, 'add_action_link' ), 10, 2 );
 		}
 	}
 
@@ -47,13 +48,35 @@ class GN_IP_Tracking_Admin {
 
 		if ( current_user_can( 'manage_options' ) ) {
 			// Admin! Show Active/Inactive message with link to settings
-      $items[] = sprintf( '<a class="gn-ip-tracking-overview" href="options-general.php?page=gn-ip-tracking">%1$s</a>', $text ) . "\n";
+      $items[] = sprintf( '<a class="gn-ip-tracking-overview" href="' . esc_url( admin_url( 'options-general.php?page=gn-ip-tracking' ) ) . '">%1$s</a>', $text ) . "\n";
     } else {
 			// Not admin, just show a Active/Inactive message without the link
       $items[] = sprintf( '<span class="gn-ip-tracking-overview">%1$s</span>', $text ) . "\n";
     }
 
 		return $items;
+	}
+
+	/**
+	 * Add a link to the options page within the plugins list
+	 *
+	 * @param array  $links array of links for the plugins, adapted when the current plugin is found.
+	 * @param string $file  the filename for the current plugin, which the filter loops through.
+	 *
+	 * @return array $links
+	 */
+	function add_action_link( $links, $file ) {
+		// Add a link to options, but only if the user can manage them
+		if ( GN_IP_TRACKING_BASENAME === $file && current_user_can( 'manage_options' ) ) {
+			$settings_link = '<a href="' . esc_url( admin_url( 'options-general.php?page=gn-ip-tracking' ) ) . '">' . __( 'Settings', 'gn-ip-tracking' ) . '</a>';
+			array_unshift( $links, $settings_link );
+		}
+
+		// Add link to the about page on the GN site.
+		$faq_link = '<a href="https://gambitnash.co.uk/what-we-do/b2b-ip-tracking/#utm_source=gn-ip-tracking-wp-link&amp;utm_medium=textlink&amp;utm_campaign=faq-link">' . __( 'About IP Tracking', 'gn-ip-tracking' ) . '</a>';
+		array_unshift( $links, $faq_link );
+
+		return $links;
 	}
 
 	public function admin_add_menu_page() {
