@@ -1,0 +1,15 @@
+/*
+ * IP Tracking by Gambit Nash
+ * https://wordpress.org/plugins/gn-ip-tracking
+ * License: GPLv3 or later
+ */
+
+#dashboard_right_now a.ipt-inactive:before,
+#dashboard_right_now span.ipt-inactive:before {
+  content: "\f530";
+}
+
+#dashboard_right_now a.ipt-active:before,
+#dashboard_right_now span.ipt-active:before {
+  content: "\f177";
+}
