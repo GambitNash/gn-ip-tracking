@@ -1,19 +1,33 @@
 === IP Tracking by Gambit Nash ===
 Contributors: danw310895
-Tags: ip, tracking, b2b, leads, saas, integration, ip tracking, lead tracking, analytics, gambit nash
+Donate link: https://gambitnash.co.uk/what-we-do/b2b-ip-tracking/
+Tags: ip, tracking, ip tracking, ip-tracking, b2b, leads, saas, integration, lead tracking, analytics, gambit nash, anonymous visitors, sales leads, embed, integration, marketing, sales, statistics, stats
 Requires at least: 4.0
 Tested up to: 4.7
 Stable tag: 1.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-The IP Tracking plugin from Gambit Nash is an easy way to integrate your existing subscription into your WordPress website.
+The IP Tracking plugin from Gambit Nash is an easy way to integrate our B2B IP Tracking service into your WordPress website.
 
 == Description ==
 
 The IP Tracking plugin from Gambit Nash is an easy way to integrate your existing Gambit Nash [IP Tracking](https://gambitnash.co.uk/what-we-do/b2b-ip-tracking/ "Gambit Nash IP Tracking Service") subscription into your WordPress website.
 
 **Please Note:** This plugin is only an integration for the IP Tracking service, you will need an existing subscription in order for the plugin to function.
+
+= Video: Gambit Nash IP Tracking =
+You can use Gambit Nash IP Tracking to convert previously anonymous visitors into sales leads, see how with our short video!
+[youtube https://www.youtube.com/watch?v=YswZ8MTKuLQ]
+
+= How it works =
+From within your very own dashboard, you can identify company names, pages they’ve visited, time spent on site plus many more features and tools to help you convert website visitors into sales opportunities.
+
+With the help of the Gambit Nash IP Tracking tool, you will be able to:
+
+* Track Potential Customers in Real-time
+* Give Your Sales Team Focused Leads
+* Increase Return On Investment (ROI)
 
 
 == Installation ==
@@ -56,8 +70,9 @@ The advantage to the IP Tracking service is that our databases are updated frequ
 
 == Screenshots ==
 
-1. Plugin Configuration Screen
-
+1. IP Tracking Plugin Configuration Screen.
+1. IP Tracking Status in the "At a Glance" dashboard widget.
+1. The IP Tracking Dashboard (External service)
 
 == Changelog ==
 
